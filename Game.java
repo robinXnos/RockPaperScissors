@@ -3,27 +3,30 @@ package com.company;
 public class Game {
     String one;
     String two;
+    String typo;
     public Game(String one, String two) {
         this.one = one;
         this.two = two;
     }
 
     public void checkwin(){
-        if (one.equals(two))
-            System.out.println("draw");
-        else if  (one.equals("rock") && two.equals("paper"))
-            System.out.println("two wins");
-        else if (one.equals("rock") && two.equals("scissors"))
-            System.out.println("one wins");
-        else if (one.equals("paper") && two.equals("rock"))
-            System.out.println("one wins");
-        else if (one.equals("paper") && two.equals("scissors"))
-            System.out.println("two wins");
-        else if (one.equals("scissors") && two.equals("paper"))
-            System.out.println("one wins");
-        else if (one.equals("scissors") && two.equals("rock"))
-            System.out.println("two wins");
-        else
-            System.out.println("typo, restart the game silly");
+        if (one.equalsIgnoreCase(two))
+            System.out.println(one + " against " + two + "\n --> draw");
+        else if  (one.equalsIgnoreCase("rock") && two.equalsIgnoreCase("paper"))
+            System.out.println(two + " beats " + one + "\nPlayer two wins");
+        else if (one.equalsIgnoreCase("rock") && two.equalsIgnoreCase("scissors"))
+            System.out.println(one + " beats " + two + "\nPlayer one wins");
+        else if (one.equalsIgnoreCase("paper") && two.equalsIgnoreCase("rock"))
+            System.out.println(one + " beats " + two + "\nPlayer one wins");
+        else if (one.equalsIgnoreCase("paper") && two.equalsIgnoreCase("scissors"))
+            System.out.println(two + " beats " + one + "\nPlayer two wins");
+        else if (one.equalsIgnoreCase("scissors") && two.equalsIgnoreCase("paper"))
+            System.out.println(one + " beats " + two + "\nPlayer one wins");
+        else if (one.equalsIgnoreCase("scissors") && two.equalsIgnoreCase("rock"))
+            System.out.println(two + " beats " + one + "\nPlayer two wins");
+        else {
+            typo = (!one.equalsIgnoreCase("rock") && !one.equalsIgnoreCase("paper") && one.equalsIgnoreCase("scissors")) ? two : one;
+            System.out.println("Theres no such thing as '" + typo +"' silly!");
+        }
     }
 }

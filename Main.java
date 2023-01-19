@@ -6,12 +6,17 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Player 1, its your turn!");
-        String one = scanner.next();
-        System.out.println("Player 2, its your turn!");
-        String two = scanner.next();
+        String exit = "yes";
+        while (!exit.equalsIgnoreCase("no")){
+            System.out.println("Player 1, its your turn!");
+            String one = scanner.next();
+            System.out.println("Player 2, its your turn!");
+            String two = scanner.next();
 
-        Game game = new Game (one, two);
-        game.checkwin();
+            Game game = new Game(one, two);
+            game.checkwin();
+            System.out.println("another game? yes or no???? ANSWER ME !!!!");
+            exit = scanner.next();
+        }
     }
 }
