@@ -23,7 +23,7 @@ public class Main {
             String player2 = scanner.next(); // saves the input of player 2
 
             Game game = new Game(player1, player2); // game object for OOP ;)
-            game.checkwin(); // method to compare both inputs
+            game.checkWin(); // method to compare both inputs
             System.out.println(ANSI_RED + "\nWillst du nochmal spielen? JA ODER NEIN ?!!?! ... ANTWORTE DOCH MAN" + ANSI_RESET); // output question
             exit = scanner.next(); // every input except "no" gets ignored --> while-loop
             for (int i = 0; i < 30; i++)
