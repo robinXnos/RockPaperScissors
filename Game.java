@@ -10,23 +10,24 @@ public class Game {
     }
 
     public void checkwin(){
+
         if (one.equalsIgnoreCase(two))
-            System.out.println(one + " against " + two + "\n --> draw");
-        else if  (one.equalsIgnoreCase("rock") && two.equalsIgnoreCase("paper"))
-            System.out.println(two + " beats " + one + "\nPlayer two wins");
-        else if (one.equalsIgnoreCase("rock") && two.equalsIgnoreCase("scissors"))
-            System.out.println(one + " beats " + two + "\nPlayer one wins");
-        else if (one.equalsIgnoreCase("paper") && two.equalsIgnoreCase("rock"))
-            System.out.println(one + " beats " + two + "\nPlayer one wins");
-        else if (one.equalsIgnoreCase("paper") && two.equalsIgnoreCase("scissors"))
-            System.out.println(two + " beats " + one + "\nPlayer two wins");
-        else if (one.equalsIgnoreCase("scissors") && two.equalsIgnoreCase("paper"))
-            System.out.println(one + " beats " + two + "\nPlayer one wins");
-        else if (one.equalsIgnoreCase("scissors") && two.equalsIgnoreCase("rock"))
-            System.out.println(two + " beats " + one + "\nPlayer two wins");
+            System.out.println(one + " schlägt " + two + "\n --> unentschieden"); // draw
+        else if  (one.equalsIgnoreCase("stein") && two.equalsIgnoreCase("papier"))
+            System.out.println(two + " schlägt " + one + "\nSpieler 2 gewinnt");
+        else if (one.equalsIgnoreCase("stein") && two.equalsIgnoreCase("schere"))
+            System.out.println(one + " schlägt " + two + "\nSpieler 1 gewinnt");
+        else if (one.equalsIgnoreCase("papier") && two.equalsIgnoreCase("stein"))
+            System.out.println(one + " schlägt " + two + "\nSpieler 1 gewinnt");
+        else if (one.equalsIgnoreCase("papier") && two.equalsIgnoreCase("schere"))
+            System.out.println(two + " schlägt " + one + "\nSpieler 2 gewinnt");
+        else if (one.equalsIgnoreCase("schere") && two.equalsIgnoreCase("papier"))
+            System.out.println(one + " schlägt " + two + "\nSpieler 1 gewinnt");
+        else if (one.equalsIgnoreCase("schere") && two.equalsIgnoreCase("stein"))
+            System.out.println(two + " schlägt " + one + "\nSpieler 2 gewinnt");
         else {
-            typo = (!one.equalsIgnoreCase("rock") && !one.equalsIgnoreCase("paper") && one.equalsIgnoreCase("scissors")) ? two : one;
-            System.out.println("Theres no such thing as '" + typo +"' silly!");
+            typo = (!one.equalsIgnoreCase("stein") && !one.equalsIgnoreCase("schere") && one.equalsIgnoreCase("papier")) ? two : one; // checks if one is a typo and saves input as typo, else saves two as typo
+            System.out.println("Es gibt kein '" + typo +"' dulli! Schreib mal vernünftig");
         }
     }
 }
