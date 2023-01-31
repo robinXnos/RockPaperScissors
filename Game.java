@@ -8,9 +8,7 @@ public class Game {
         this.one = one;
         this.two = two;
     }
-
     public void checkwin(){
-
         if (one.equalsIgnoreCase(two))
             System.out.println(one + " schlägt " + two + "\n --> unentschieden"); // draw
         else if  (one.equalsIgnoreCase("stein") && two.equalsIgnoreCase("papier"))
