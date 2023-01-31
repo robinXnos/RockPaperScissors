@@ -10,7 +10,7 @@ public class Game {
         this.player2 = player2;
     }
     
-    public void checkwin(){
+    public void checkWin(){
         if (player1.equalsIgnoreCase(player2))
             System.out.println(player1 + " schlägt " + player2 + "\n --> unentschieden"); // draw
         else if  (player1.equalsIgnoreCase("stein") && player2.equalsIgnoreCase("papier"))
